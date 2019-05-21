@@ -21,21 +21,21 @@
 }
 
 .bg-dark {
-	background-color: #075290 !important;
+	background-color: #457dac !important;
 }
 
 .btn-custom {
 	color: #ffffff;
-	background: #075290;
+	background: #457dac;
 	border-color: #ffffff;
 }
 
 .btn-custom:hover {
-	background: #053e6c;
+	background: #075290;
 }
 
 .btn-custom:active {
-	background: #032948 !important;
+	background: #075290 !important;
 }
 
 .find-me-div {
@@ -43,7 +43,7 @@
 }
 
 .find-me-ui {
-	background-color: #075290;
+	background-color: #457dac;
 	border: 1px solid #ffffff;
 	border-radius: .25rem;
 	cursor: pointer;
@@ -66,7 +66,7 @@
 }
 
 #footer-brand-link:hover {
-	color: #77aaff
+	color: #075290
 }
 
 .help-pin {
@@ -76,7 +76,7 @@
 
 .modal-header {
 	color: #ffffff;
-	background-color: #075290 !important;
+	background-color: #457dac !important;
 }
 
 .margin-bottom {

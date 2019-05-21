@@ -285,7 +285,7 @@ var ics=function(e,t){"use strict";{if(!(navigator.userAgent.indexOf("MSIE")>-1&
 					position: new google.maps.LatLng(Vax.Events[Vax.i]['Latitude'], Vax.Events[Vax.i]['Longitude']),
 					map: Vax.Map,
 					icon: {
-						url: 'img/red.png',
+						url: 'img/blue.png',
 
 						scaledSize: new google.maps.Size(32, 32)
 					}
@@ -296,7 +296,7 @@ var ics=function(e,t){"use strict";{if(!(navigator.userAgent.indexOf("MSIE")>-1&
 					position: new google.maps.LatLng(Vax.Events[Vax.i]['Latitude'], Vax.Events[Vax.i]['Longitude']),
 					map: Vax.Map,
 					icon: {
-						url: 'img/blue.png',
+						url: 'img/red.png',
 						scaledSize: new google.maps.Size(32, 32)
 					}
 				});
