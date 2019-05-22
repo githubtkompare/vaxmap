@@ -25,6 +25,20 @@ var Vax = {
 	},
 
 	initialize: function(){
+		/*
+		 Set the brand
+		 */
+		$('#header-brand-lg').text(Vax.Configs.Brand.headerLg);
+		$('#header-brand-sm').text(Vax.Configs.Brand.headerSm);
+		if(Vax.Configs.Brand.footerURL === '') {
+			$('#footer-brand').text(Vax.Configs.Brand.footer);
+		} else {
+			$('#footer-brand').html('<a id="footer-brand-link" href="'+Vax.Configs.Brand.footerURL+'" target="_blank">'+Vax.Configs.Brand.footer+"</a>");
+		}
+
+		/*
+		 Get the data
+		 */
 		if(Vax.Configs.Source === 'Google') {
 			$.when(
 					$.getJSON('https://sheets.googleapis.com/v4/spreadsheets/'+Vax.Configs.Data.Google.sheet.id+'/values/'+Vax.Configs.Data.Google.sheet.values+'?majorDimension='+Vax.Configs.Data.Google.sheet.majorDimension+'&key='+Vax.Configs.Data.Google.key, function(events) {
@@ -78,16 +92,6 @@ var Vax = {
 				'event_label': 'Error-Data',
 				'event_category': 'Error no valid data source.'
 			});
-		}
-
-		/*
-		Set the brand
-		 */
-		$('#header-brand').text(Vax.Configs.Brand.header);
-		if(Vax.Configs.Brand.footerURL === '') {
-			$('#footer-brand').text(Vax.Configs.Brand.footer);
-		} else {
-			$('#footer-brand').html('<a id="footer-brand-link" href="'+Vax.Configs.Brand.footerURL+'" target="_blank">'+Vax.Configs.Brand.footer+"</a>");
 		}
 
 		/*
