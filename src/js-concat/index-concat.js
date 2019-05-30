@@ -326,11 +326,11 @@ var ics=function(e,t){"use strict";{if(!(navigator.userAgent.indexOf("MSIE")>-1&
 							body += ' at ';
 						}
 						if(Vax.Events[i]['Phone'] !== '') {
-							body += Vax.Events[i]['Phone'];
+								body += '<strong>'+Vax.Events[i]['Phone']+'</strong>';
 						}
 					}
-					if(Vax.Events[i]['Url'] !== '') {
-						body += '<br><a href="'+Vax.Events[i]['Url']+'" target="_blank">'+Vax.Events[i]['Url']+'</a>';
+					if(Vax.Events[i]['Url']['url'] !== '') {
+						body += '<br><a href="'+Vax.Events[i]['Url']['url']+'" target="_blank">'+Vax.Events[i]['Url']['url']+'</a>';
 					}
 					// If this is single day event...
 					if(Vax.Events[i]['BeginDate'] === Vax.Events[i]['EndDate']) {
