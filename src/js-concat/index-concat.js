@@ -27,6 +27,7 @@ var ics=function(e,t){"use strict";{if(!(navigator.userAgent.indexOf("MSIE")>-1&
 		});
 	},
 
+
 	initialize: function(){
 		/*
 		 Set the brand

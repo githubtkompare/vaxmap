@@ -24,6 +24,7 @@ var Vax = {
 		});
 	},
 
+
 	initialize: function(){
 		/*
 		 Set the brand
