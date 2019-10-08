@@ -349,7 +349,7 @@ var ics=function(e,t){"use strict";{if(!(navigator.userAgent.indexOf("MSIE")>-1&
 							 Google Analytics - Record Event
 							 */
 							gtag('event', 'Button', {
-								'event_label': 'Add To Calendar',
+								'event_label': 'Calendar',
 								'event_category': Vax.Events[i]['LocationName']+' - '+Vax.Events[i]['MomentBeginDate'].format('M/D/YYYY')
 							});
 
@@ -371,8 +371,10 @@ var ics=function(e,t){"use strict";{if(!(navigator.userAgent.indexOf("MSIE")>-1&
 						window.open('https://maps.google.com/?q='+Vax.Events[i]['Address1']+' '+Vax.Events[i]['City']+', '+Vax.Events[i]['State']+' '+Vax.Events[i]['PostalCode']+' '+Vax.Events[i]['Country'], '_blank');
 						$('#modal-event-detail-directions').off();
 					});
-
-					body += '<hr>'+Vax.Events[i]['CostText'];
+					var regex = /(http\S+html)/gm;
+					var subst = ' the <a href="$1" target="_blank">Flu Clinics in the City of Chicago</a> web page';
+					var bodyText = Vax.Events[i]['CostText'].replace(regex, subst);
+					body += '<hr>'+bodyText;
 					body += '</p>';
 					$('#modal-event-detail-body').html(body);
 					$('#modal-event-detail').modal('show');
