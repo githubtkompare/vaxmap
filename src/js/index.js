@@ -6,6 +6,7 @@ var Vax = {
 	Markers: [],
 	AddressMarker: null,
 	i: null, // iterator
+	isAPhone: false,
 
 	loadScript: function() {
 		$.when(
@@ -88,6 +89,12 @@ var Vax = {
 			$('#footer-brand').text(Vax.Configs.Brand.footer);
 		} else {
 			$('#footer-brand').html('<a id="footer-brand-link" href="'+Vax.Configs.Brand.footerURL+'" target="_blank">'+Vax.Configs.Brand.footer+"</a>");
+		}
+		/*
+		Is the device a phone?
+		 */
+		if ($("a[href*='tel:']").length > 0 || matchMedia('(hover: none), (pointer: coarse)').matches) {
+			Vax.isAPhone = true;
 		}
 
 		/*
@@ -236,6 +243,19 @@ var Vax = {
 		});
 	},
 
+	replaceURLs: function(message) {
+		if(!message) return;
+
+		var urlRegex = /(((https?:\/\/)|(www|getvaxchi\.))[^\s]+)/g;
+		return message.replace(urlRegex, function (url) {
+			var hyperlink = url;
+			if (!hyperlink.match('^https?:\/\/')) {
+				hyperlink = 'http://' + hyperlink;
+			}
+			return '<a href="' + hyperlink + '" target="_blank" rel="noopener noreferrer">' + url + '</a>'
+		});
+	},
+
 	setMoment: function() {
 		// Create moment.js instances for Begin date&time, and End date&time
 		for (var i = 0; i < Vax.Events.length; i++) {
@@ -319,12 +339,28 @@ var Vax = {
 							body += ' at ';
 						}
 						if(Vax.Events[i]['Phone'] !== '') {
-							body += Vax.Events[i]['Phone'];
+							// Make a tel link on devices that are probably phones.
+							if(Vax.isAPhone) {
+								var regexPhone = /[^0-9]/gm;
+								var str = Vax.Events[i]['Phone'];
+								var substPhone = '';
+								// The substituted value will be contained in the result variable
+								var result = str.replace(regexPhone, substPhone);
+								// Assumes USA phone numbers.
+								if(result.charAt(0) !== "1" && result.length === 10) {
+									result = "1"+result;
+
+								}
+								body += '<a href="tel:+'+result+'">'+Vax.Events[i]['Phone']+'</a>';
+							} else {
+								body += Vax.Events[i]['Phone'];
+							}
 						}
 					}
 					if(Vax.Events[i]['Url'] !== '') {
 						body += '<br><a href="'+Vax.Events[i]['Url']+'" target="_blank">'+Vax.Events[i]['Url']+'</a>';
 					}
+
 					// If this is single day event...
 					if(Vax.Events[i]['BeginDate'] === Vax.Events[i]['EndDate']) {
 						body += '<hr>'+Vax.Events[i]["MomentBeginDate"].format('dddd, MMMM Do, YYYY');
@@ -354,9 +390,17 @@ var Vax = {
 						});
 					} else {
 						// not a single day event...
-						body += '<hr>'+Vax.Events[i]['HoursText'];
+						if(Vax.Events[i]['HoursText'] !== ''){
+							body += '<hr>'+Vax.Events[i]['HoursText'];
+						}
+
 						$('#modal-event-detail-ical').hide().off();
 					}
+
+					if(Vax.Events[i]['NotesText'] !== ''){
+						body += '<hr>'+Vax.replaceURLs(Vax.Events[i]['NotesText']);
+					}
+
 					$('#modal-event-detail-directions').on('click', function(){
 						/*
 						 Google Analytics - Record Event

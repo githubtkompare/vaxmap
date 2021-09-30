@@ -10,7 +10,7 @@
 			}
 		},
 		"CityOfChicago": {
-			"url": "https://data.cityofchicago.org/resource/tn8j-nyyi.json?season=2019-2020",
+			"url": "https://data.cityofchicago.org/resource/w3hg-pyhz.json?season=2021-2022",
 			"alias": {
 				"Address1": "street1",
 				"Address2": "street2",
