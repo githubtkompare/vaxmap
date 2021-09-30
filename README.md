@@ -28,7 +28,7 @@ If you want to reuse this code for your city/county/province/state, a good place
 If you want to change the javascript code I wrote, you'll find that in /src/js/index.js. I use Grunt ([https://gruntjs.com/](https://gruntjs.com/)) to minify and concatenate this file along with /src/js/ical.js ([https://github.com/nwcell/ics.js](https://github.com/nwcell/ics.js)) and /src/js/moment.js ([https://momentjs.com/](https://momentjs.com/)) I try to use meaningful variable names, so hopefully the code won't be too hard to follow.
 
 ### CODE REPOSITORY NOTES
-I have been exceptionally terrible at organizing the code repository for Chicago Flu Shots and it has not gotten proper love. I plan on changing my ways.
+I have been exceptionally terrible at organizing the code repository for Chicago Flu Shots and it has not gotten proper love. I plan on changing my ways. The current production branch is https://github.com/githubtkompare/vaccinate/tree/flu-chicago.
 
 ### ERRATA
 This code should be fairly easy to take and use by other government agencies offering flu shot clinic events. If you would like any advice on implementing this code, drop me a line.
