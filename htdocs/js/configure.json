@@ -26,6 +26,8 @@
 				"EndDate": "end_date",
 				"BeginTime": "begin_time",
 				"EndTime": "end_time",
+				"BeginDateTime": "begin_datetime",
+				"EndDateTime": "end_datetime",
 				"RecurrenceDays": "recurrence_days",
 				"HoursText": "hours",
 				"EligibilityText": "eligibility",

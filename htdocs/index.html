@@ -16,15 +16,15 @@
 	</script>
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous" />
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-5Z/4A9O2iG86Ca27OwgMwLmRYt9bjLOoEpPXy7yhiSs=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.css" integrity="sha512-ClXpwbczwauhl7XC16/EFu3grIlYTpqTYOwqwAi7rNSqxmTqCpE8VS3ovG+qi61GoxSLnuomxzFXDNcPV1hvCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="css/index.css">
 	<title>Find Vaccinations</title>
 </head>
 <body>
 <header>
-	<nav id="navbar-header" class="navbar navbar-dark fixed-top bg-dark">
+	<nav id="navbar-header" class="navbar navbar-dark fixed-top bg-dark" aria-label="header-navigation">
 		<span class="navbar-brand mb-0 h1" id="header-brand">Find Vaccinations</span>
 		<div class="btn-toolbar">
 			<button id="help" class="btn btn-custom my-1 ml-auto mr-3">Help</button>
@@ -38,7 +38,7 @@
 	</div>
 </main>
 <footer id="footer">
-	<nav id="navbar-footer" class="navbar navbar-dark fixed-bottom bg-dark">
+	<nav id="navbar-footer" class="navbar navbar-dark fixed-bottom bg-dark" aria-label="footer-navigation">
 		<span id="span-footer" class="float-left span-footer"><small id="footer-brand">Department of Public Health</small></span>
 		<button id="about" class="btn btn-custom my-1 float-right">About</button>
 	</nav>
@@ -57,9 +57,9 @@
 			</div>
 			<div id="modal-event-detail-body" class="modal-body"></div>
 			<div class="modal-footer">
-				<button id="modal-event-detail-ical" type="button" class="btn btn-custom" data-dismiss="modal"><i class="fas fa-calendar-plus"></i> Calendar
+				<button id="modal-event-detail-ical" type="button" class="btn btn-custom" data-dismiss="modal"><em class="fas fa-calendar-plus"></em> Calendar
 				</button>
-				<button id="modal-event-detail-directions" type="button" class="btn btn-custom" data-dismiss="modal"><i class="fas fa-location-arrow"></i> Directions</button>
+				<button id="modal-event-detail-directions" type="button" class="btn btn-custom" data-dismiss="modal"><em class="fas fa-location-arrow"></em> Directions</button>
 				<button id="modal-event-detail-close" type="button" class="btn btn-outline-secondary" data-dismiss="modal">
 					Close
 				</button>
@@ -85,9 +85,9 @@
 					<div class="row margin-bottom">
 						<div class="col-sm-12">
 							<div class="input-group">
-								<input type="text" class="form-control datetimepicker-input" id="modal-search-date" data-toggle="datetimepicker" data-target="#modal-search-date" readonly="readonly"/>
+								<label for="modal-search-date"></label><input type="text" class="form-control datetimepicker-input" id="modal-search-date" data-toggle="datetimepicker" data-target="#modal-search-date" readonly="readonly"/>
 								<div class="input-group-append" data-target="#modal-search-date" data-toggle="datetimepicker">
-									<div class="input-group-text"><i class="fas fa-calendar"></i></div>
+									<div class="input-group-text"><em class="fas fa-calendar"></em></div>
 									<button id="modal-search-search" type="button" class="btn btn-custom" data-dismiss="modal">Search</button>
 								</div>
 							</div>
@@ -179,13 +179,10 @@
 </div>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-				integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-				crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-jgMYw0Xf+iO0EYC4pnX8tS4vmDqyjtJ9dwfSMMjSZuY=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-k6/Bkb8Fxf/c1Tkyl39yJwcOZ1P4cRrJu77p83zJjN2Z55prbFHxPs9vN7q3l3+tSMGPDdoH51AEU8Vgo1cgAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/index.min.js"></script>
 </body>
 
